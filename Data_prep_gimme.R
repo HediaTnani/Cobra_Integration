@@ -1,5 +1,5 @@
 # author : Hédia Tnani
-
+# Step1. Mean analysis microarray
 require(GEOquery)
 require(oligo)
 require(mogene10sttranscriptcluster.db)
@@ -50,6 +50,7 @@ gene_model <- read.csv("genes.csv", h=F)
 gene_model$V1 %in% tmp1$ENTREZID
 mean_expr_entrzf$ENTREZID %in% gene_model$V1
 ##########################################################################################
+# Step2 Gene annotation
 library(biomaRt)
 ids = as.character(mean_expr[,1])
 httr::set_config(httr::config(ssl_verifypeer = FALSE))
